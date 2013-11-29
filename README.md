@@ -1,8 +1,10 @@
-- Sort of HEATTECH
+# Sort of HEATTECH
 
 My (somewhat) fruitful attempt using linear interpolation to duplicate
 the square pattern found in UNIQLO's HEATTECH advertising. You'll notice
 that the pattern doesn't quite match up (but it's somewhat close!).
+
+Head on over to the [LOVE](http://love2d.org) website, grab a copy, and try it out!
 
 Use the up and down arrows to tool with the spacing between squares.
 
