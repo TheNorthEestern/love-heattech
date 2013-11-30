@@ -3,12 +3,18 @@ function love.load()
     width = 13,
     height = 6 
   } 
+  gradient_stops = {
+    {{242,0,103},{255, 211, 186}},
+    {{243,0,84},{255, 205, 146}},
+    {{243,1,62},{255, 203, 91}},
+    {{244,0,38},{255, 200, 18}},
+    {{244,0,0},{255, 200, 0}},
+    {{244,0,0},{255, 199, 0}},
+  }
   box_hw = 40
   box_spacing = 5
   x_margin = (love.graphics.getWidth() - (board.width * (box_hw + box_spacing)) / 2)
   y_margin = (love.graphics.getHeight() - (board.height * (box_hw + box_spacing)) / 2)
-  color_one = {255, 199, 0}
-  color_two = {242, 0  , 103}
 end
 
 function love.update(dt)
@@ -22,23 +28,27 @@ end
 
 function love.draw()
   love.graphics.setBackgroundColor(255, 255, 255)
-  local color_factor = (board.height*board.width/100)
-  local band = board.height*board.width/13
+  local color_factor = 1
   for x = 1, board.width, 1 do
    for y = 1, board.height, 1 do
+      color_one = gradient_stops[y][2]
+      color_two = gradient_stops[y][1]
+
       left, top = leftTopCoordsOfBox(x, y)
-      if x >= 2 or y >= 2 then
+
+      if x > 1 then
         color = blendColors(color_one, color_two, color_factor)
         love.graphics.setColor(color[1], color[2], color[3], 255)
-        if x < board.width then
-        end
       else
         love.graphics.setColor(color_two[1], color_two[2], color_two[3])
       end
+
       love.graphics.rectangle("fill", left-450, top-350, box_hw, box_hw)
+
       if color_factor > 0 then
-        color_factor = color_factor - .009
+        color_factor = color_factor - (.0025 * x)
       end
+
     end
   end
 end
