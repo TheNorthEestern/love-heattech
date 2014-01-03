@@ -7,7 +7,8 @@ that the pattern doesn't quite match up (but it's somewhat close!).
 Head on over to the [LOVE](http://love2d.org) website, grab a copy for
 your platform, and give it a whirl!
 
-Use the up and down arrows to tool with the spacing between squares.
 
 ![](pics/sortof_heattech_grid.png) 
+Use the up and down arrows to tool with the spacing between squares.
+![](pics/sortof_heattech_grid.gif) 
 ![](pics/heattech_grid.jpg) 

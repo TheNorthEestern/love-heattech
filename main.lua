@@ -1,4 +1,5 @@
 function love.load()
+  love.mouse.setVisible(false)
   board = {
     width = 13,
     height = 6 
@@ -19,10 +20,10 @@ end
 
 function love.update(dt)
   if love.keyboard.isDown('up') then
-    box_spacing = box_spacing + 45 * dt
+    box_spacing = box_spacing - 45 * dt
   end
   if love.keyboard.isDown('down') then
-    box_spacing = box_spacing - 45 * dt
+    box_spacing = box_spacing + 45 * dt
   end
 end
 
@@ -31,10 +32,9 @@ function love.draw()
   local color_factor = 1
   for x = 1, board.width, 1 do
    for y = 1, board.height, 1 do
+
       color_one = gradient_stops[y][2]
       color_two = gradient_stops[y][1]
-
-      left, top = leftTopCoordsOfBox(x, y)
 
       if x > 1 then
         color = blendColors(color_one, color_two, color_factor)
@@ -42,6 +42,8 @@ function love.draw()
       else
         love.graphics.setColor(color_two[1], color_two[2], color_two[3])
       end
+
+      left, top = leftTopCoordsOfBox(x, y)
 
       love.graphics.rectangle("fill", left-450, top-350, box_hw, box_hw)
 
