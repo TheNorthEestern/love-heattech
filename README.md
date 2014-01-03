@@ -9,6 +9,9 @@ your platform, and give it a whirl!
 
 
 ![](pics/sortof_heattech_grid.png) 
-Use the up and down arrows to tool with the spacing between squares.
-![](pics/sortof_heattech_grid.gif) 
 ![](pics/heattech_grid.jpg) 
+
+<p style="font-weight: bold; text-align: center;">Use the up and down
+arrows to tool with the spacing between squares</p>
+
+![](pics/sortof_heattech_grid.gif) 
